@@ -37,11 +37,11 @@ ngp   = ep(3); % Total gauss points
 E  = ep(4);
 v    = ep(5);
 
-if ptype==1
+if ptype==1 % Plane stress
     D=(E/(1-v^2))*[1 v 0;
                     v 1 0;
                     0 0 (1-v)/2];
-elseif ptype==2
+elseif ptype==2 % Plane strain
     d=(1-v)/(1-2*v);
     b=v/(1-2*v);
     
