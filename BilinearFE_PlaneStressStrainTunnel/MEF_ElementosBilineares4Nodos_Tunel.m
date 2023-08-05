@@ -5,6 +5,7 @@ clc
 H=1000; % Tunnel's height (cm)
 B=800; % Half tunnel's width
 Z=5000; % Depth at which the upper tunnel's boundary is under water (cm)
+z=0.1;
 D=300; % Thickness of tunnel's pavement
 b=400; % Interior tunnel's width
 h=400; % Interior tunnel's height
@@ -26,7 +27,7 @@ pvc=-2400e-6; % volumetric weight
 
 %% Type of analysis: plane stress (1) or plane strain (2)
 
-typeAnalysis=1;
+typeAnalysis=1; % 1: plane stress, 2: plane strain
 
 eq=[ 0; pvc]; % self weight loads on each global axis direction:
             % [x(horizontal), y(gravity)]
@@ -156,9 +157,9 @@ eldraw2(Ex,Ey,plotpar); % This is a CALFEM's function
                       % https://github.com/CALFEM/calfem-matlab
 
 %----Deformed mesh----%
+figure(1)
 sfac=1000;
 Ed=extract(Edof,d);
-figure(1);
 plotpar=[1 3 2];
 eldisp2(Ex,Ey,Ed,plotpar,sfac); % This is a CALFEM's function
                       % To download CALFEM go to its repository:

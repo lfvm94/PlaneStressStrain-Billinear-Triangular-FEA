@@ -151,9 +151,9 @@ eldraw2(Ex,Ey,plotpar); % This is a CALFEM's function
                           % https://github.com/CALFEM/calfem-matlab
 
 %----Deformed mesh----%
+figure(1)
 sfac=1000;
 Ed=extract(Edof,d);
-figure(1);
 plotpar=[1 3 2];
 eldisp2(Ex,Ey,Ed,plotpar,sfac);% This is a CALFEM's function
                               % To download CALFEM go to its repository:
